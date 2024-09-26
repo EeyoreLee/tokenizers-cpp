@@ -17,6 +17,8 @@ set(TOKENIZERS_C_LINK_LIBS "")
 set(CARGO_EXTRA_ENVS "")
 message(STATUS "system-name" ${CMAKE_SYSTEM_NAME})
 
+add_compile_options(-fPIC)
+
 if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
   list(APPEND TOKENIZERS_C_LINK_LIBS ${CMAKE_DL_LIBS})
 elseif (CMAKE_SYSTEM_NAME STREQUAL "Emscripten")
